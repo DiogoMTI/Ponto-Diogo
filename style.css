@@ -1,51 +1,134 @@
+/* Geral */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
     text-align: center;
-    background: #f0f0f0;
+    padding: 20px;
 }
-#form-container {
-    margin: 20px;
+
+h1, h2 {
+    color: #4a90e2;
 }
-select, button {
+
+/* Estilos da logo */
+.logo {
+    height: 50px;
+    margin-top: 10px;
+}
+
+/* Formulário de Entrada */
+.form-container {
+    margin-top: 20px;
+}
+
+.input-text {
     padding: 10px;
-    margin: 5px;
     font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    margin-bottom: 20px;
+    display: inline-block;
 }
+
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
 .entrada {
-    background-color: green;
-    color: white;
+    background-color: #4CAF50; /* Verde para Entrada */
 }
+
 .saida {
-    background-color: red;
-    color: white;
+    background-color: #f44336; /* Vermelho para Saída */
 }
-table {
-    margin: 0 auto;
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Tabela de Registros */
+.table {
+    width: 100%;
     border-collapse: collapse;
-    width: 80%;
-}
-th, td {
-    border: 1px solid #aaa;
-    padding: 8px;
-}
-#admin-login, #admin-panel {
-    margin-top: 40px;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-#creator {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    font-size: 12px;
-    font-weight: bold;
-    animation: blink 1s infinite;
-    color: #00c3ff;
+.table th, .table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
 }
 
-@keyframes blink {
-    0% { color: #00c3ff; }
-    25% { color: #00ff7f; }
-    50% { color: #ff00ff; }
-    75% { color: #ffff00; }
-    100% { color: #00c3ff; }
+.table th {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+/* Painel Admin */
+.admin-login {
+    margin-top: 30px;
+}
+
+.admin-login input {
+    margin: 10px 0;
+    width: 250px;
+}
+
+.admin-panel {
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.admin-actions {
+    margin-top: 20px;
+}
+
+.admin-actions .btn {
+    width: 48%;
+    margin-right: 4%;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* Estilo de Rodapé */
+.creator {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #888;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .input-text {
+        width: 80%;
+    }
+
+    .btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .admin-actions .btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .table th, .table td {
+        font-size: 14px;
+    }
 }
