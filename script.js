@@ -74,6 +74,14 @@ function deleteAllRecords() {
     }
 }
 
-// Eventos de clique para registrar a entrada e saída
+// Função para exportar os registros para um arquivo Excel
+function exportToExcel() {
+    const ws = XLSX.utils.json_to_sheet(registros);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Registros');
+    XLSX.writeFile(wb, 'registros_bate_ponto.xlsx');
+}
+
+// Evento de clique para registrar a entrada e saída
 document.getElementById('entrada').addEventListener('click', () => adicionarRegistro('Entrada'));
 document.getElementById('saida').addEventListener('click', () => adicionarRegistro('Saída'));
