@@ -1,7 +1,20 @@
-// Vamos criar um array global para armazenar os registros de bate-ponto.
-let registros = [];
+// Função para carregar os registros do localStorage
+function carregarRegistros() {
+    const registrosSalvos = localStorage.getItem('registros');
+    if (registrosSalvos) {
+        registros = JSON.parse(registrosSalvos);
+    } else {
+        registros = [];
+    }
+    atualizarTabela();
+}
 
-// Função para adicionar um registro (entrada ou saída).
+// Função para salvar os registros no localStorage
+function salvarRegistros() {
+    localStorage.setItem('registros', JSON.stringify(registros));
+}
+
+// Função para adicionar um registro (entrada ou saída)
 function adicionarRegistro(tipo) {
     const nome = document.getElementById('nome').value;
     if (!nome) {
@@ -18,10 +31,11 @@ function adicionarRegistro(tipo) {
     };
 
     registros.push(registro);
+    salvarRegistros();  // Salva no localStorage
     atualizarTabela();
 }
 
-// Função para atualizar a tabela de registros.
+// Função para atualizar a tabela de registros
 function atualizarTabela() {
     const tbody = document.getElementById('registros-list');
     tbody.innerHTML = ''; // Limpar a tabela antes de reexibir
@@ -66,6 +80,7 @@ function deleteAllRecords() {
     if (usuarioLogado === 'Diogo' || usuarioLogado === 'admin') {
         if (confirm('Tem certeza de que deseja excluir todos os registros?')) {
             registros = [];
+            salvarRegistros();  // Salva no localStorage após a exclusão
             atualizarTabela();
             atualizarPainelAdmin();
         }
@@ -85,3 +100,6 @@ function exportToExcel() {
 // Evento de clique para registrar a entrada e saída
 document.getElementById('entrada').addEventListener('click', () => adicionarRegistro('Entrada'));
 document.getElementById('saida').addEventListener('click', () => adicionarRegistro('Saída'));
+
+// Carregar os registros do localStorage quando a página for carregada
+window.addEventListener('DOMContentLoaded', carregarRegistros);
