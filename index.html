@@ -5,45 +5,50 @@
     <title>Bate-Ponto Online</title>
     <link rel="stylesheet" href="style.css"> <!-- Link para o seu arquivo CSS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script> <!-- Biblioteca XLSX para exportação Excel -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <img src="logo.png" alt="Logo Imediato Seguros" style="height:50px; margin-top:10px;">
-    <h1>Bate-Ponto</h1>
+    <img src="logo.png" alt="Logo Imediato Seguros" class="logo">
+    <h1>Bate-Ponto Online</h1>
 
-    <div id="form-container">
-        <input type="text" id="nome" placeholder="Digite seu nome" />
-        <button id="entrada" class="entrada">Registrar Entrada</button>
-        <button id="saida" class="saida">Registrar Saída</button>
+    <div id="form-container" class="form-container">
+        <input type="text" id="nome" placeholder="Digite seu nome" class="input-text" />
+        <button id="entrada" class="btn entrada">Registrar Entrada</button>
+        <button id="saida" class="btn saida">Registrar Saída</button>
     </div>
 
     <h2>Registros de Hoje</h2>
-    <table id="registros" style="width:100%; border-collapse: collapse; margin-top: 20px;">
+    <table id="registros" class="table">
         <thead>
             <tr>
-                <th style="border: 1px solid #000; padding: 10px;">Nome</th>
-                <th style="border: 1px solid #000; padding: 10px;">Data</th>
-                <th style="border: 1px solid #000; padding: 10px;">Hora</th>
-                <th style="border: 1px solid #000; padding: 10px;">Tipo</th>
+                <th>Nome</th>
+                <th>Data</th>
+                <th>Hora</th>
+                <th>Tipo</th>
             </tr>
         </thead>
         <tbody id="registros-list"></tbody>
     </table>
 
-    <div id="admin-login">
+    <!-- Painel do Admin -->
+    <div id="admin-login" class="admin-login">
         <h3>Acesso Mestre</h3>
-        <input type="text" id="admin-user" placeholder="Usuário">
-        <input type="password" id="admin-pass" placeholder="Senha">
-        <button onclick="loginAdmin()">Entrar</button>
+        <input type="text" id="admin-user" placeholder="Usuário" class="input-text">
+        <input type="password" id="admin-pass" placeholder="Senha" class="input-text">
+        <button onclick="loginAdmin()" class="btn login">Entrar</button>
     </div>
 
-    <div id="admin-panel" style="display:none;">
+    <div id="admin-panel" class="admin-panel" style="display:none;">
         <h2>Todos os Registros</h2>
-        <pre id="admin-data"></pre>
-        <button onclick="deleteAllRecords()">Excluir Todos os Registros</button>
-        <button onclick="exportToExcel()">Baixar Excel</button>
+        <pre id="admin-data" class="admin-data"></pre>
+        <div class="admin-actions">
+            <button onclick="deleteAllRecords()" class="btn delete">Excluir Todos os Registros</button>
+            <button onclick="exportToExcel()" class="btn export">Baixar Excel</button>
+        </div>
     </div>
+
+    <div id="creator" class="creator">Creator - Diogo</div>
 
     <script src="script.js"></script>
 </body>
 </html>
-<div id="creator" style="text-align:center; margin-top: 20px;">Creator - Diogo</div>
