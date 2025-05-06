@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f0f0f0;
+}
+#form-container {
+    margin: 20px;
+}
+select, button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+}
+.entrada {
+    background-color: green;
+    color: white;
+}
+.saida {
+    background-color: red;
+    color: white;
+}
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+th, td {
+    border: 1px solid #aaa;
+    padding: 8px;
+}
+#admin-login, #admin-panel {
+    margin-top: 40px;
+}
+
+#creator {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    animation: blink 1s infinite;
+    color: #00c3ff;
+}
+
+@keyframes blink {
+    0% { color: #00c3ff; }
+    25% { color: #00ff7f; }
+    50% { color: #ff00ff; }
+    75% { color: #ffff00; }
+    100% { color: #00c3ff; }
+}

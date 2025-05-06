@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Bate-Ponto Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="logo.png" alt="Logo Imediato Seguros" style="height:50px; margin-top:10px;">
+<h1>Bate-Ponto</h1>
+    <div id="form-container">
+        <select id="nome">
+            <option value="">Selecione seu nome</option>
+            <option value="Ana">Ana</option>
+            <option value="Carlos">Carlos</option>
+            <option value="João">João</option>
+        </select>
+        <button id="entrada" class="entrada">Registrar Entrada</button>
+        <button id="saida" class="saida">Registrar Saída</button>
+    </div>
+    <h2>Registros de Hoje</h2>
+    <table id="registros">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Data</th>
+                <th>Hora</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div id="admin-login">
+        <h3>Acesso Mestre</h3>
+        <input type="text" id="admin-user" placeholder="Usuário">
+        <input type="password" id="admin-pass" placeholder="Senha">
+        <button onclick="loginAdmin()">Entrar</button>
+    </div>
+
+    <div id="admin-panel" style="display:none;">
+        <h2>Todos os Registros</h2>
+        <pre id="admin-data"></pre>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<div id="creator">Creator - Diogo</div>
