@@ -1,3 +1,6 @@
+// Vamos criar um array global para armazenar os registros de bate-ponto.
+let registros = [];
+
 // Função para carregar os registros do localStorage
 function carregarRegistros() {
     const registrosSalvos = localStorage.getItem('registros');
